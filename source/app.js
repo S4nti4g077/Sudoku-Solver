@@ -33,18 +33,11 @@ const sudokuSolver = async () => {
       "X-RapidAPI-Key": "eb25f7b524mshc6ceba9410eefdcp159a3djsn6774bd1cbf53",
       "X-RapidAPI-Host": "solve-sudoku.p.rapidapi.com",
     },
-    data: {
-      puzzle:
-        "2.............62....1....7...6..8...3...9...7...6..4...4....8....52.............3",
-    },
+    body: '{"puzzle":"2.............62....1....7...6..8...3...9...7...6..4...4....8....52.............3"}',
   };
 
-  await axios
-    .request(options)
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
+  fetch("https://solve-sudoku.p.rapidapi.com/", options)
+    .then((response) => response.json())
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
 };
