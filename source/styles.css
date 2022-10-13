@@ -1,0 +1,10 @@
+.sudoku {
+  display: block;
+  width: 450px;
+  height: 450px;
+}
+.inputBox {
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+}
